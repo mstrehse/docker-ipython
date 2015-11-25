@@ -2,13 +2,9 @@ astropy==1.0.6
 biopython==1.66
 Bottleneck==1.0.0
 Cython==0.21.2
-Django==1.8.6
-Jinja2==2.8
 matplotlib==1.5.0
 mrjob==0.4.6
-networkx==1.10
 pandas==0.17.1
 pylab==0.1.3
 scikit-image==0.11.3
 scikit-learn==0.17
-springpython==1.3.0rc1
