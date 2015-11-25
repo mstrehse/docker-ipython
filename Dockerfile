@@ -25,6 +25,8 @@ RUN apt-get -yq install \
 
 RUN pip install pip --upgrade
 
+pip install numpy
+
 ADD requirements.txt /root/requirements.txt
 
 RUN pip install -r /root/requirements.txt
