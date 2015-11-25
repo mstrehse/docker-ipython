@@ -29,10 +29,6 @@ RUN pip install numpy
 
 RUN pip install scipy
 
-RUN pip install matplotlib
-
-RUN pip install pandas
-
 RUN pip install ipython[notebook]==2.2
 
 ADD notebook.conf /etc/supervisor/conf.d/notebook.conf
