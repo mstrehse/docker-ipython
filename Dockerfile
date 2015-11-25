@@ -29,9 +29,9 @@ RUN pip install numpy
 
 RUN pip install scipy
 
-ADD requirements.txt /root/requirements.txt
+RUN pip install matplotlib
 
-RUN pip install -r /root/requirements.txt
+RUN pip install pandas
 
 RUN pip install ipython[notebook]==2.2
 
