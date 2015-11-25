@@ -25,14 +25,9 @@ RUN apt-get -yq install \
 
 RUN pip install pip --upgrade
 
-RUN pip install \
-	numpy \
-	scipy \
-	matplotlib \
-	scikit-learn \
-	scikit-image \
-	pandas \
-	astropy
+ADD requirements.txt /root/requirements.txt
+
+RUN pip install -r /root/requirements.txt
 
 RUN pip install ipython[notebook]==2.2
 
