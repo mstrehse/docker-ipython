@@ -1,28 +1,12 @@
 FROM ubuntu:14.04
 
-MAINTAINER Maximilian Strehse <max@strehse.eu>
+MAINTAINER Peter Parente <parente@cs.unc.edu>
 
 ENV HOME /root
 
 RUN apt-get update
-
-RUN apt-get -yq install \
-	pandoc \
-	python \
-	supervisor \
-	wget \
-	python-pip 
-
-RUN apt-get -yq install \
-	python-dev \
-	gfortran \
-	libopenblas-dev \
-	liblapack-dev \ 
-	libfreetype6-dev \
-	libxft-dev \
-	libjpeg-dev \
-	libpng-dev
-
+RUN apt-get -yq install pandoc python supervisor wget python-pip
+RUN apt-get -yq install python-dev
 RUN pip install pip --upgrade
 
 RUN pip install ipython[notebook]==2.2
@@ -38,4 +22,3 @@ VOLUME ["/ipy"]
 
 EXPOSE 8888
 CMD ["supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
-
