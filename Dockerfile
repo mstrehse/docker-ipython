@@ -25,10 +25,6 @@ RUN apt-get -yq install \
 
 RUN pip install pip --upgrade
 
-RUN pip install numpy
-
-RUN pip install scipy
-
 RUN pip install ipython[notebook]==2.2
 
 ADD notebook.conf /etc/supervisor/conf.d/notebook.conf
