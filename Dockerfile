@@ -27,6 +27,8 @@ RUN pip install pip --upgrade
 
 RUN pip install numpy
 
+RUN pip install scipy
+
 ADD requirements.txt /root/requirements.txt
 
 RUN pip install -r /root/requirements.txt
