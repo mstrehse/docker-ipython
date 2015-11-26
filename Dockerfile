@@ -4,6 +4,8 @@ MAINTAINER Maximilian Strehse <max@strehse.eu>
 
 ENV HOME /root
 
+RUN apt-get update
+
 RUN apt-get -yq install \
 	pandoc \
 	python \
