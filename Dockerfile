@@ -4,31 +4,28 @@ MAINTAINER Maximilian Strehse <max@strehse.eu>
 
 ENV HOME /root
 
-RUN apt-get update
-
-RUN apt-get -yq install \
+RUN apt-get update && apt-get -yq install \
 	pandoc \
 	python \
 	supervisor \
 	wget \
 	python-pip 
 
-RUN apt-get -yq install \
+RUN apt-get update && apt-get -yq install \
 	python-dev \
 	gfortran \
 	libopenblas-dev \
 	liblapack-dev
 
-RUN apt-get -yq install \
+RUN apt-get update && apt-get -yq install \
 	libfreetype6-dev \
 	libxft-dev \
 	libjpeg-dev \
 	libpng-dev
 
-RUN pip install pip --upgrade
-
-RUN pip install numpy
-RUN pip install scipy
+RUN pip install pip --upgrade && \
+	pip install numpy && \
+	pip install scipy
 
 ADD requirements.txt /root/requirements.txt
 RUN pip install -r /root/requirements.txt
