@@ -15,7 +15,9 @@ RUN apt-get update && apt-get -yq install \
 	python-dev \
 	gfortran \
 	libopenblas-dev \
-	liblapack-dev
+	liblapack-dev \
+	r-base \
+	python-qt4
 
 RUN apt-get update && apt-get -yq install \
 	libfreetype6-dev \
@@ -25,7 +27,11 @@ RUN apt-get update && apt-get -yq install \
 
 RUN pip install pip --upgrade && \
 	pip install numpy && \
-	pip install scipy
+	pip install scipy && \
+	pip install nose && \
+	pip install mock && \
+	pip install sphinx
+	
 
 ADD requirements.txt /root/requirements.txt
 RUN pip install -r /root/requirements.txt
