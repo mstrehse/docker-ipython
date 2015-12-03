@@ -9,17 +9,13 @@ RUN apt-get update && apt-get -yq install \
 	python \
 	supervisor \
 	wget \
-	python-pip 
-
-RUN apt-get update && apt-get -yq install \
+	python-pip \
 	python-dev \
 	gfortran \
 	libopenblas-dev \
 	liblapack-dev \
 	r-base \
-	python-qt4
-
-RUN apt-get update && apt-get -yq install \
+	python-qt4 \
 	libfreetype6-dev \
 	libxft-dev \
 	libjpeg-dev \
