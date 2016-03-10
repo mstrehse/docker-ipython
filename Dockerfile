@@ -30,7 +30,7 @@ RUN pip install pip --upgrade && \
 	pip install pandas && \
 	pip install pylab && \
 	pip install scikit-image && \
-	picturesp install scikit-learn
+	picturesp install scikit-learn || true
 
 RUN pip install pip --upgrade jupyter[all]	
 RUN mkdir /notebooks
