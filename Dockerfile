@@ -35,10 +35,9 @@ RUN pip install pip --upgrade && \
 RUN pip install pip --upgrade jupyter[all]	
 RUN mkdir /notebooks
 WORKDIR /notebooks
-Expose 8888
+Expose 443
 
 VOLUME ["/notebooks"]
 
-EXPOSE 8888
-CMD ["jupyter", "notebook"]
+CMD ["jupyter", "notebook", "--port=443", "--no-browser", "--ip=0.0.0.0"]
 
