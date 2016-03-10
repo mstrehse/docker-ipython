@@ -35,7 +35,7 @@ RUN pip install pip --upgrade && \
 RUN pip install pip --upgrade jupyter[all]	
 RUN mkdir /notebooks
 WORKDIR /notebooks
-Expose 8080
+Expose 8888
 
 VOLUME ["/notebooks"]
 
