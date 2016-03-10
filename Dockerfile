@@ -1,8 +1,5 @@
-FROM parente/ipython:latest
-
+FROM ubuntu:14.04
 MAINTAINER Maximilian Strehse <max@strehse.eu>
-
-ENV HOME /root
 
 RUN apt-get update && apt-get -yq install \
 	pandoc \
@@ -26,17 +23,22 @@ RUN pip install pip --upgrade && \
 	pip install scipy && \
 	pip install nose && \
 	pip install mock && \
-	pip install sphinx
-	
+	pip install sphinx && \
+	pip install astropy && \
+	pip install biopython && \
+	pip install matplotlib && \
+	pip install pandas && \
+	pip install pylab && \
+	pip install scikit-image && \
+	picturesp install scikit-learn
 
-ADD requirements.txt /root/requirements.txt
-RUN pip install -r /root/requirements.txt
+RUN pip install pip --upgrade jupyter[all]	
+RUN mkdir /notebooks
+WORKDIR /notebooks
+Expose 8080
 
-ADD notebook.conf /etc/supervisor/conf.d/notebook.conf
-ADD start.sh /
-
-VOLUME ["/ipy"]
+VOLUME ["/notebooks"]
 
 EXPOSE 8888
-CMD ["supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+CMD ["jupyter", "notebook"]
 
