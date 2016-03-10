@@ -1,7 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Maximilian Strehse <max@strehse.eu>
 
-ENV JUPYTER_PORT 443
 ENV TINI_VERSION v0.6.0
 
 RUN apt-get update && apt-get -yq install \
@@ -38,7 +37,7 @@ RUN pip install pip --upgrade && \
 RUN pip install pip --upgrade jupyter[all]	
 RUN mkdir /notebooks
 WORKDIR /notebooks
-Expose ${JUPYTER_PORT}
+Expose 443
 
 VOLUME ["/notebooks"]
 
@@ -46,5 +45,5 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/
 RUN chmod +x /usr/bin/tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
-CMD ["jupyter", "notebook", "--port=${JUPYTER_PORT}", "--no-browser", "--ip=0.0.0.0"]
+CMD ["jupyter", "notebook", "--port=443", "--no-browser", "--ip=0.0.0.0"]
 
