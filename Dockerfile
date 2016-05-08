@@ -31,8 +31,11 @@ RUN pip install pip --upgrade && \
 	pip install matplotlib && \
 	pip install pandas && \
 	pip install pylab && \
+	pip install cython && \
+	pip install bottleneck && \
+	pip install mrjob && \
 	pip install scikit-image && \
-	picturesp install scikit-learn || true
+	pip install scikit-learn || true
 
 RUN pip install pip --upgrade jupyter[all]	
 RUN mkdir /notebooks
